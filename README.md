@@ -1,6 +1,4 @@
-# Christian's `Boilerplates`
-
-[![Welcome](https://cnd-prod-1.s3.us-west-004.backblazeb2.com/new-banner4-scaled-for-github.jpg)](https://youtu.be/apgp9egIKK8)
+# KhulnaSoft's `Boilerplates`
 
 **Hey, there!**
 
