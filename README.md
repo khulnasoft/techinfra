@@ -2,11 +2,11 @@
 
 **Hey, there!**
 
-**I’m Christian, and I’m passionate about creating educational tech content for IT Pros and Homelab nerds.**
+**KhulnaSoft, Our passionate about creating educational tech content for IT Pros and Homelab nerds.**
 
 This Repository **boilerplates** is my personal knowledge-base. Here you'll find code-snippets, technical documentation, and command reference for various tools, and technologies.
 
-> :warning: Be aware, products can change over time. I do my best to keep up with the latest changes and releases, but please understand that this won’t always be the case.
+> :warning: Be aware, products can change over time. We do our best to keep up with the latest changes and releases, but please understand that this won’t always be the case.
 
 ## Contribution
 
@@ -14,10 +14,9 @@ If you’d like to contribute to this project, reach out to me on social media o
 
 ## Other Resources
 
-- [Dotfiles](https://github.com/khulnasoft/dotfiles) - My personal configuration files on macOS
+- [Dotfiles](https://github.com/khulnasoft/boilerplates/tree/dotfiles) - Our configuration files on macOS
 - [Boilerplates](https://github.com/khulnasoft/boilerplates) - Templates for various projects like Docker, K8S, Ansible, etc
-- [Videos](https://github.com/khulnasoft/videos) - Documentation and project files for all my video tutorials on YouTube
-- [Homelab](https://github.com/khulnasoft/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
+- [Homelab](https://github.com/khulnasoft/boilerplates/tree/homelab) - This is entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
 
 ## Support me
 
