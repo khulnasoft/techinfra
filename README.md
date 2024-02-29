@@ -1,32 +1,166 @@
-# Christian's `Boilerplates`
+Dockerfile examples
+======
 
-[![Welcome](https://cnd-prod-1.s3.us-west-004.backblazeb2.com/new-banner4-scaled-for-github.jpg)](https://youtu.be/apgp9egIKK8)
+Script env.sh reads config.yaml, so you don't need to update this script if you want to change something or to add new Docker image. Usage info:
 
-**Hey, there!**
+    USAGE: ./env.sh option key
 
-**I’m Christian, and I’m passionate about creating educational tech content for IT Pros and Homelab nerds.**
+    Options:
+        start
+        stop
+        restart
+        build
+        rebuild
+        kill
+        rm
+        rmi
 
-This Repository **Boilerplates** is my personal template collection. Here you'll find templates, and configurations for various tools, and technologies.
+    Keys from config.yaml:
+        wp
+        jenkins
+        redis
+        mongo
+        rails
+        ssg
+        ghost
+        hipache
+        abh-jmeter
 
-> :warning: Be aware, products can change over time. I do my best to keep up with the latest changes and releases, but please understand that this won’t always be the case.
+**NOTE:**
+Images values in config.yaml needs to match directory name where Dockerfile is located.
 
-I created them as free resources to be used in your specific use cases. If you're searching for detailed, in-depth tutorials on some tools or technologies, check out my [YouTube Channel](https://www.youtube.com/@khulnasoft).
+Trusted images
+======
 
-## Contribution
+Insted of building images on your machine you can get them from trusted image repository on public docker index:
+https://index.docker.io/u/khulnasoft/
 
-If you’d like to contribute to this project, reach out to me on social media or [Discord](https://khulnasoft.de/discord), or create a pull request for the necessary changes.
+If you skip build part with env.sh script, images will be automatically pulled from docker index.
 
-## Other Resources
+Image layers
+======
 
-- [Dotfiles](https://github.com/khulnasoft/dotfiles) - My personal configuration files on macOS
-- [Cheat-Sheets](https://github.com/khulnasoft/cheat-sheets) - Command Reference for various tools and technologies
-- [Videos](https://github.com/khulnasoft/videos) - Documentation and project files for all my video tutorials on YouTube
-- [Homelab](https://github.com/khulnasoft/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
+    |-- ubuntu:precise
+	    |-- khulnasoft/ubuntu
+	        |-- khulnasoft/redis
+	        |-- khulnasoft/apache
+	        |   |-- khulnasoft/php-apache
+	        |       |-- khulnasoft/wordpress
+	        |-- khulnasoft/nodejs
+	        |   |-- khulnasoft/ghost
+	        |   |-- khulnasoft/hipache
+	        |-- khulnasoft/postgres
+	        |-- khulnasoft/mysql
+	        |-- khulnasoft/mongo
+	        |-- khulnasoft/jdk-oracle
+	        |   |-- khulnasoft/tomcat
+	        |   |-- khulnasoft/jenkins
+	        |   |-- khulnasoft/maven
+	        |       |-- khulnasoft/jmeter-abh
+	        |-- khulnasoft/ruby
+	        |   |-- khulnasoft/ruby-rails
+	        |       |-- khulnasoft/ssg
+	        |       |-- khulnasoft/rails-sample-app
 
-## Support me
+Dependencies
+======
 
-Creating high-quality videos and valuable resources that are accessible to everyone, free of charge, is a huge challenge. With your contribution, I can dedicate more time and effort into the creation process, which ultimately enhances the quality of the content. So, all your support, by becoming a member, truly makes a significant impact on what I do. And you’ll also get some cool benefits and perks in return, as a recognition of your support.
+Docker 1.3 and above. Installation on Ubuntu 14.04:
 
-Remember, ***supporting me is entirely optional.*** Your choice to become a member or not won't change your access to my videos and resources. You are also welcome to reach out to me on Discord, if you have any questions or feedback.
+    wget -qO- https://get.docker.io/gpg | apt-key add -
+    echo "deb http://get.docker.io/ubuntu docker main" > /etc/apt/sources.list.d/docker.list
+    apt-get update
+    apt-get -y install lxc-docker
 
-[https://www.patreon.com/khulnasoft](https://www.patreon.com/khulnasoft)
+Shyaml shell yaml parser:
+
+    apt-get -y install python-pip && pip install shyaml
+
+When all is ready clone this git repository:
+
+    git clone https://github.com/khulnasoft/boilerplates.git && cd boilerplates
+
+Mac OSX
+======
+
+Requirements to run docker on Mac OSX:
+
+- VirtualBox
+- brew
+
+Install and run boot2docker:
+
+    brew install boot2docker
+    boot2docker init
+    boot2docker up
+
+Export DOCKER_HOST variable and test if docker client is connected to server:
+
+    docker ps
+    
+Tools required for my env.sh script:
+
+    brew install python
+    brew install libyaml
+     
+
+Port forwarding example from localhost:8080 to port 80 inside boot2docker-vm:
+    
+    VBoxManage controlvm boot2docker-vm natpf1 "web,tcp,127.0.0.1,8080,,80"
+
+When all is ready clone this git repository:
+
+    git clone https://github.com/khulnasoft/boilerplates.git && cd boilerplates
+
+WordPress example
+======
+
+To build WordPress images run ( https://github.com/khulnasoft/boilerplates#trusted-images ):
+
+    ./env.sh build wp
+
+This command will build all images from config.yaml (wp.images) needed by WordPress.
+
+
+To start WordPress:
+
+    ./env.sh start wp
+
+This command will search for dependencies (wp.links) and start them first if they are present. Then it will run new container which will be linked to dependencies. Also it will read port (wp.service.port) and name (wp.service.name).
+
+WordPress installation will be available at: http://localhost
+
+Also thanks to Docker VOLUMES you can access to Apache root directory (/var/www) or to MySQL from new container:
+
+    docker run -i -t --volumes-from wordpress --link mysql:mysql khulnasoft/wordpress /bin/bash
+
+To access to MySQL database from container:
+
+    mysql -h $MYSQL_PORT_3306_TCP_ADDR -u $WP_USER -p$WP_PASS
+
+Hipache example
+======
+
+To build Hipache images run ( https://github.com/khulnasoft/boilerplates#trusted-images ):
+
+    ./env.sh build hipache
+
+To start Hipache:
+
+    ./env.sh start hipache
+
+Updating redis configuration from new container:
+
+    docker run -t -rm --link redis:redis khulnasoft/redis /bin/bash -c \
+           'redis-cli -h $REDIS_PORT_6379_TCP_ADDR rpush frontend:www.dotcloud.com mywebsite'
+
+Ghost example
+======
+
+To build Ghost images run ( https://github.com/khulnasoft/boilerplates#trusted-images ):
+
+    ./env.sh build ghost
+
+To start Ghost:
+
+    ./env.sh start ghost
