@@ -12,7 +12,7 @@ Project structure:
 ```
 services:
  minecraft:
-   image: itzg/minecraft-server
+   image: khulnasoft/minecraft-server
    ports:
      - "25565:25565"
     ...
@@ -43,7 +43,7 @@ Check containers are running and the port mapping:
 ```
 $ docker ps
 CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS                   PORTS                                 NAMES
-7f696c2fb101        itzg/minecraft-server   "/start"            5 minutes ago       Up 5 minutes (healthy)
+7f696c2fb101        khulnasoft/minecraft-server   "/start"            5 minutes ago       Up 5 minutes (healthy)
 ```
 
 After running `docker-compose up`, the minecraft server takes a bit of time to initialize Minecraft world. You can follow the progress:
