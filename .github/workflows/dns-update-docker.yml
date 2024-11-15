@@ -3,11 +3,11 @@ name: Update Docker Compose File
 on:
   push:
     branches:
-      - main
+      - develop
       - test
       - dev
     paths:
-      - 'dns/dns-prod-1/docker-compose.yaml'
+      - 'homelab/dns/dns-prod-1/docker-compose.yaml'
   workflow_dispatch:
 
 jobs:
@@ -24,8 +24,8 @@ jobs:
           username: xcad
           host: srv-prod-7.home.clcreative.de
           key: ${{ secrets.SSH_XCAD }}
-          source: './dns/dns-prod-1/docker-compose.yaml'
-          target: '/home/xcad/dns-prod-1/'
+          source: './homelab/dns/dns-prod-1/docker-compose.yaml'
+          target: '/homelab/home/xcad/dns-prod-1/'
           strip_components: 3
 
       - name: Restart Docker Container
@@ -35,5 +35,5 @@ jobs:
           host: srv-prod-7.home.clcreative.de
           key: ${{ secrets.SSH_XCAD }}
           command: |
-            cd dns-prod-1
+            cd homelab/dns-prod-1
             docker compose up -d --force-recreate

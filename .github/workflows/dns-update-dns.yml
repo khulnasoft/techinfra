@@ -3,14 +3,14 @@ name: "Update DNS Records"
 on:
   push:
     branches:
-      - main
+      - develop
     paths:
-      - 'dns/dns-prod-1/terraform/*.tf'
+      - 'homelab/dns/dns-prod-1/terraform/*.tf'
   workflow_dispatch:
   
 defaults:
   run:
-    working-directory: dns/dns-prod-1/terraform
+    working-directory: homelab/dns/dns-prod-1/terraform
 
 env:
   TF_VAR_TSIG_KEY_HOME: ${{ secrets.WEBHOOK_URL_DNS_UPDATE }}
