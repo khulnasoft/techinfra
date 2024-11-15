@@ -18,10 +18,10 @@ If you’d like to contribute to this project, reach out to me on social media o
 
 ## Other Resources
 
-- [Boilerplates](https://github.com/khulnasoft/boilerplates) - Templates for various projects like Docker, K8S, Ansible, etc
-- [Cheat-Sheets](https://github.com/khulnasoft/cheat-sheets) - Command Reference for various tools and technologies
-- [Homelab](https://github.com/khulnasoft/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
-
+- [Boilerplates](https://github.com/khulnasoft/tree/develop/boilerplates) - Templates for various projects like Docker, K8S, Ansible, etc
+- [Cheat-Sheets](https://github.com/khulnasoft/tree/develop/cheat-sheets) - Command Reference for various tools and technologies
+- [Homelab](https://github.com/khulnasoft/tree/develop/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
+  
 ## Support me
 
 Creating high-quality videos and valuable resources that are accessible to everyone, free of charge, is a huge challenge. With your contribution, I can dedicate more time and effort into the creation process, which ultimately enhances the quality of the content. So, all your support, by becoming a member, truly makes a significant impact on what I do. And you’ll also get some cool benefits and perks in return, as a recognition of your support.
