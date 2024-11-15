@@ -1,16 +1,16 @@
-# KhulnaSoft's `Boilerplates`
-
-[![Welcome](https://cnd-prod-1.s3.us-west-004.backblazeb2.com/new-banner4-scaled-for-github.jpg)](https://youtu.be/apgp9egIKK8)
+# KhulnaSoft's "Boilerplates"
 
 **Hey, there!**
 
 **I’m KhulnaSoft, and I’m passionate about creating educational tech content for IT Pros and Homelab nerds.**
 
-This Repository **Boilerplates** is my personal template collection. Here you'll find templates, and configurations for various tools, and technologies.
+This Repository **Dotfiles** contain my personal config files. Here you'll find configs, customizations, themes, and whatever I need to personalize my mac OS experience.
 
 > :warning: Be aware, products can change over time. I do my best to keep up with the latest changes and releases, but please understand that this won’t always be the case.
 
-I created them as free resources to be used in your specific use cases. If you're searching for detailed, in-depth tutorials on some tools or technologies, check out my [YouTube Channel](https://www.youtube.com/@khulnasoft).
+## Terminal and Application Icons with Nerd-Fonts
+
+To display icons in terminal or applications Fonts, I'm using [Nerd-Fonts](https://www.nerdfonts.com). I'm currently using the **Hack Nerd Font Mono** in terminal applications, and **Hack Nerd Font** in applications.
 
 ## Contribution
 
@@ -18,10 +18,10 @@ If you’d like to contribute to this project, reach out to me on social media o
 
 ## Other Resources
 
-- [Dotfiles](https://github.com/khulnasoft/dotfiles) - My personal configuration files on macOS
-- [Cheat-Sheets](https://github.com/khulnasoft/cheat-sheets) - Command Reference for various tools and technologies
-- [Homelab](https://github.com/khulnasoft/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
-
+- [Dotfiles](https://github.com/khulnasoft/techinfra/tree/develop/Dotfiles) - Templates for various projects like Docker, K8S, Ansible, etc
+- [Cheat-Sheets](https://github.com/khulnasoft/techinfra/tree/develop/cheat-sheets) - Command Reference for various tools and technologies
+- [Homelab](https://github.com/khulnasoft/techinfra/tree/develop/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
+  
 ## Support me
 
 Creating high-quality videos and valuable resources that are accessible to everyone, free of charge, is a huge challenge. With your contribution, I can dedicate more time and effort into the creation process, which ultimately enhances the quality of the content. So, all your support, by becoming a member, truly makes a significant impact on what I do. And you’ll also get some cool benefits and perks in return, as a recognition of your support.
