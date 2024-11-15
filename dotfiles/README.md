@@ -18,9 +18,9 @@ If you’d like to contribute to this project, reach out to me on social media o
 
 ## Other Resources
 
-- [Boilerplates](https://github.com/khulnasoft/tree/develop/boilerplates) - Templates for various projects like Docker, K8S, Ansible, etc
-- [Cheat-Sheets](https://github.com/khulnasoft/tree/develop/cheat-sheets) - Command Reference for various tools and technologies
-- [Homelab](https://github.com/khulnasoft/tree/develop/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
+- [Boilerplates](https://github.com/khulnasoft/techinfra/tree/develop/boilerplates) - Templates for various projects like Docker, K8S, Ansible, etc
+- [Cheat-Sheets](https://github.com/khulnasoft/techinfra/tree/develop/cheat-sheets) - Command Reference for various tools and technologies
+- [Homelab](https://github.com/khulnasoft/techinfra/tree/develop/homelab) - This is my entire Homelab documentation, and configurations for infrastructure, applications, networking, and more.
   
 ## Support me
 
